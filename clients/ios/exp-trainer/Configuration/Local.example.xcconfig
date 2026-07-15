@@ -1,0 +1,3 @@
+// Copy this file to Local.xcconfig and set your own backend URL.
+// Do not put a model-provider API key in any iOS configuration.
+BACKEND_BASE_URL = https:/$()/api.example.com

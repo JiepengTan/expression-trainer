@@ -7,3 +7,7 @@ dist/
 demo-*.html
 prompt-playground.html
 listenhub-*.png
+
+# Per-developer iOS backend settings and credentials
+clients/ios/exp-trainer/Configuration/Local.xcconfig
+/output

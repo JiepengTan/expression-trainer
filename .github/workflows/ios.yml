@@ -1,0 +1,30 @@
+name: iOS
+
+on:
+  pull_request:
+    paths:
+      - "clients/ios/**"
+      - "data/**"
+      - ".github/workflows/ios.yml"
+  push:
+    branches: [main]
+    paths:
+      - "clients/ios/**"
+      - "data/**"
+
+jobs:
+  build-and-test:
+    runs-on: macos-26
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode.app
+      - name: Check for embedded provider keys
+        run: bash clients/ios/exp-trainer/Scripts/check-secrets.sh
+      - name: Build
+        run: make ios-build
+      - name: Unit and integration tests
+        run: make ios-test IOS_DESTINATION='platform=iOS Simulator,name=iPhone 17 Pro,OS=latest'
+      - name: UI state smoke tests
+        run: make ios-ui-smoke IOS_DESTINATION='platform=iOS Simulator,name=iPhone 17 Pro,OS=latest'

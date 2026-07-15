@@ -1,0 +1,5 @@
+// CI supplies BACKEND_BASE_URL for staging builds.
+BACKEND_BASE_URL =
+INFOPLIST_KEY_BACKEND_BASE_URL = $(BACKEND_BASE_URL)
+SWIFT_ACTIVE_COMPILATION_CONDITIONS = STAGING $(inherited)
+#include? "Local.xcconfig"
