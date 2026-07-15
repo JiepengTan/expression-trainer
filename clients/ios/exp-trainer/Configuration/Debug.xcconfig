@@ -1,0 +1,4 @@
+// Keep secrets out of source control. Local.xcconfig is gitignored.
+BACKEND_BASE_URL =
+INFOPLIST_KEY_BACKEND_BASE_URL = $(BACKEND_BASE_URL)
+#include? "Local.xcconfig"

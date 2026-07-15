@@ -1,0 +1,3 @@
+"NSMicrophoneUsageDescription" = "用于录下你的表达并在本机生成逐字稿。";
+"NSSpeechRecognitionUsageDescription" = "用于把你的表达转换为实时逐字稿。";
+"CFBundleDisplayName" = "表达训练";
